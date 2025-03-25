@@ -1,95 +1,17 @@
 1. For each problem, state its goal in your own words and describe your approach to solve the 
 problem along with any issues you encountered and if/how you managed to solve those issues.
 
-[Problem 1 (Greet Three)]
+[Problem 1 (Compute Edit Distance)]
 
-Goal: Three names as command line inputs are used to print a message:"Hi name3, name2, and name1." 
+Goal: Take two Strings as standard input from data\example10.txt file and to compute it's edit distance opt matrix and print is as standrad output.
 
-Approach: Using args three variable were stored and then a new variable was created with the message and printed as standard output.
+Approach: After taking the two srting as standrad input from the given file, we construct the empty matrix of string length with extra row and column for gap. Now we fill the matrix by nested for loop with the needleman and wunsch concept (using min value from right, down and diagonal values) with addition of 2 for gap, 1 for mismatch and 0 for match. Finally we get the matrix with the desired value and then print it with the printf function with %3d to print values of 3 width including spaces.  
 
-[Problem 2 (Three Sort)]
+[Problem 2 (Recover Alignment)]
 
-Goal: Three integer values as command line inputs are used to print the ascendig order.
+Goal: Take the two strings and the matrix from the program above as standard input and compute it's optimal edit distance and each elements mapping of the two string and print them with - indicating gap.
 
-Approach: Using parseInt function three integer values are stored and new variable are created where it has maximum number(using math.max function), minimum number(math.min function) and the middle number in those variables. Then in ascending order the numbers are printed as standard output.
-
-[Problem 3 (Great Circle Distance)]
-
-Goal: Two latitudes and two longitudes of double type as command line input are used to print the great circle distance using the distance formula.
-
-Approach: using parsedouble two latitudes and two longitudes are stored and using the distance formula given the answer is printed as standard output. 
-
-[Problem 4 (Uniform Random Numbers)]
-
-Goal: Two integers as command line inputs are used as interval from which three random numbers of type doubes are generated and mean, variance and stdard deviance are printed.
-
-Approach: Using parseInt function two integer values are stored and then using stdrandom library and uniform function we get three double type numbers. Using mean, variance and standard deviation formulas we store them and print them as standard output in order mean, variance, and standard deviation.
-
-[Problem 5 (Triangle Inequality)]
-
-Goal: Three sides of triangle as command line inputs are used to see whether they form a triangle or not.
-
-Approach: Using parseInt function three integer values are stored and using boolean type and logical operator 'and' we see if all three sides form triangle or not. Then true or false is printed as standard output.
-
-[Problem 6 (Quadratic Equation)]
-
-Goal: Three variables of quadratic equation as command line argument are used to find the roots of the qudratic equation.
-
-Approach: Using parsedouble function three integer values are stored and then discriminant is found and stored into double variable then the roots are find using the roots formula. the roots are then printed as standard output.
-
-[Problem 7 (Six-sided Die)]
-
-Goal: A random number generated that represent the six-sided die than the face of the die is printed.
-
-Approach: using stdrandom library and uniform function a random number is generated from range 1-6. Then the die face is printed as per the number as standard output.
-
-[Problem 8 (Playing Card)]
-
-Goal: A random rank and suit is generated from the 52 playing card and printed.
-
-Approach: using Stdrandom library and uniform funtion we get rank from range 2-14 and suit 1-4. then using nested if the rank is assigned to the number we got and suit is assigned from the 4 given.
-
-[Problem 9 (Greatest Common Divisor)]
-
-Goal: Two integers as command line inputs are used to find and print the greates common divisor of them.
-
-Approach: Using parseInt function two integer values are stored. Using while loop until the number doesn't divides other we find the greatest common divisor and swap the numbers. we print the gcd using standard output.
-
-[Problem 10 (Factorial Function)]
-
-Goal: An Integer is used as command line input and print the factorial of an integer.
-
-Approach: Using parseInt function an integer value are stored and using for loop we store the result of the factorial into a long type variable and printed as standard output.
-
-[Problem 11 (Fibonacci Function)]
-
-Goal: An Integer is used as command line input and print the last digit of the fibonacci series of an integer.
-
-Approach: Using parseInt function an integer values are stored and using while loop and swaping the number with other and other with the sum of both and the final element of the series is printed as standard output.
-
-[Problem 12 (Primality Test)]
-
-Goal: An integer is used as command line input to check whether it is true or false.
-
-Approach: Using parseInt function an integer values are stored and using while loop we check if it is prime or not and then using nested if we print true or false as standard output.
-
-[Problem 13 (Counting Primes)]
-
-Goal: An integer is used to find all the prime numbers from the rnge of 1 to that integer and is printed.
-
-Approach: Using parseInt function an integer values are stored and using while loop we check whether each element of that is prime or not of the range till the number and then the count of the number is then printed as standard output.
-
-[Problem 14 (Perfect Numbers)]
-
-Goal: An integer is used to find all the perfect numbers from the range of 1 to that integer and is printed.
-
-Approach: Using parseInt function an integer values are stored and using for loop into for loop we check whether the number is the perfect number whose sum of the roots are same as the number from the range 2-(the given number) and then is printed as standard output.
-
-[Problem 15 (Ramanujan Numbers)]
-
-Goal: To find the smallest expressible as the sum of two vubes in two different ways.
-
-Approach: Using parseInt function an integer values are stored and then using nested while loop ith all possible combinations we find the number from the range whose smallest number is expressible as the sum of two cubes in two different ways. 
+Approach: We first print all the necessary details like string x and y, there optimal alignment number. Then we get the values from opt matrix which were marked red and they are the optimal alignment. We print them as first character from x string then character from y string and their penalty. If either of the string is finished first then the other string with its elements are aligned with gap and we print them.
 
 2. Did you receive any help? List the sources along with a short description of the help received.
 
