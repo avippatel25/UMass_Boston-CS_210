@@ -1,17 +1,17 @@
 1. For each problem, state its goal in your own words and describe your approach to solve the 
 problem along with any issues you encountered and if/how you managed to solve those issues.
 
-[Problem 1 (Compute Edit Distance)]
+Problem 1 (Percolation Data Type): ...
 
-Goal: Take two Strings as standard input from data\example10.txt file and to compute it's edit distance opt matrix and print is as standrad output.
+Goal: We need to find if the system percolates or not.
 
-Approach: After taking the two srting as standrad input from the given file, we construct the empty matrix of string length with extra row and column for gap. Now we fill the matrix by nested for loop with the needleman and wunsch concept (using min value from right, down and diagonal values) with addition of 2 for gap, 1 for mismatch and 0 for match. Finally we get the matrix with the desired value and then print it with the printf function with %3d to print values of 3 width including spaces.  
+Approach: Firstly we take a union find system of n*n and encodes its site number with 0(source),1,2,...10(sink). Secondly, we open the site if it is closed and if the site is in first row we connect to source and if it in last row we connect to sink. we then check if it connects to its neighbor sites which are open. We then return if thats a full site or not and lastly if we find that the source is connected to the sink then we say that system percolates. We make sure to throw error for percolation system whose index n is less than equal to 0 and if the interval of i and j is outside of [0,n-1]. We also use blackwash for the problem where there are sites which are not full but its reported incorrectly as full. 
 
-[Problem 2 (Recover Alignment)]
+Problem 2 (Estimation of Percolation Threshold): ...
 
-Goal: Take the two strings and the matrix from the program above as standard input and compute it's optimal edit distance and each elements mapping of the two string and print them with - indicating gap.
+Goal: We find the percolation thresold of the system.
 
-Approach: We first print all the necessary details like string x and y, there optimal alignment number. Then we get the values from opt matrix which were marked red and they are the optimal alignment. We print them as first character from x string then character from y string and their penalty. If either of the string is finished first then the other string with its elements are aligned with gap and we print them.
+Approach: Here we first calculate percolation thresold of a system and stores that in an array and continue this experiment 'm' times. We do that by choosing a site at random until the system percolates and find the thresold of it. Then we use mean, standard deviation and low and high values of all thresold of 'm' experiments to be 95% confident for the percolation thresold of the system. We use StdStats library for those formulas.
 
 2. Did you receive any help? List the sources along with a short description of the help received.
 
